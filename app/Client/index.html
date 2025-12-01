@@ -4,16 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Przelicznik walut</title>
-    <script src="api.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form>
-        <label>Kwota w PLN</label>
-        <input id="pln" type="number" placeholder="Wprowadź kwotę"/>
+        <label>Kwota w PLN:</label>
+        <input id="pln" type="number" step="0.01" placeholder="Wprowadź kwotę"/>
         <button id="submit-btn" type="button">Zatwierdź</button>
     </form>
     <div id="currency-table">
-
+        <table class="hidden">
+            <thead>
+                <tr>
+                    <th>Waluta</th>
+                    <th>Kurs</th>
+                    <th>Kwota</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>USD</td>
+                    <td id="usd-rate"></td>
+                    <td id="usd-vlaue"></td>
+                </tr>
+                <tr>
+                    <td>EUR</td>
+                    <td id="eur-rate"></td>
+                    <td id="eur-vlaue"></td>
+                </tr>
+                <tr>
+                    <td>CHF</td>
+                    <td id="chf-rate"></td>
+                    <td id="chf-vlaue"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p id="date"></p>
     </div>
+    <script src="api.js"></script>
 </body>
 </html>
