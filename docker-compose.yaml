@@ -6,7 +6,7 @@ services:
     ports:
     - "8080:80"
     volumes:
-    - ./app/:/var/www/html
+    - ./:/var/www/html
     environment:
       - OPCACHE_ENABLE=0
     restart: always
