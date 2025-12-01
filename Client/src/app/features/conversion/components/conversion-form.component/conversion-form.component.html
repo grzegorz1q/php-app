@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit()">
+    <label>Kwota w PLN:</label>
+    <input 
+        type="number" 
+        step="0.01" 
+        placeholder="Wprowadź kwotę" 
+        name="amount"
+        [(ngModel)]="amount" 
+        />
+    <button type="submit">Zatwierdź</button>
+</form>
+@if (errorMessage) {
+    <p class="error-message">{{ errorMessage }}</p>
+}

@@ -16,12 +16,11 @@ class CurrencyConverterService implements ICurrencyConverterService{
         $currencyRatesTable = $this->exchangeRatesApi->getRates();
         
         return new ConversionResultDto(
-            usd: round($amount / $currencyRatesTable->rates['USD'], 2),
-            eur: round($amount / $currencyRatesTable->rates['EUR'], 2),
-            chf: round($amount / $currencyRatesTable->rates['CHF'], 2),
-            usdRate: $currencyRatesTable->rates['USD'],
-            eurRate: $currencyRatesTable->rates['EUR'],
-            chfRate: $currencyRatesTable->rates['CHF'],
+            rates: [
+                ['currency' => 'USD', 'value' => round($amount / $currencyRatesTable->rates['USD'],2), 'rate' => $currencyRatesTable->rates['USD']],
+                ['currency' => 'EUR', 'value' => round($amount / $currencyRatesTable->rates['EUR'],2), 'rate' => $currencyRatesTable->rates['EUR']],
+                ['currency' => 'CHF', 'value' => round($amount / $currencyRatesTable->rates['CHF'],2), 'rate' => $currencyRatesTable->rates['CHF']]
+            ],
             date: $currencyRatesTable->date->format('d-m-Y')
         );
     }

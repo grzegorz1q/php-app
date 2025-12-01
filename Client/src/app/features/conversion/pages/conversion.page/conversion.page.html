@@ -1,0 +1,7 @@
+<div class="container">
+    <app-conversion-form 
+        (amountSent)="getConversionFromPlnToUsdEurChf($event)"
+        (errorOccurred)="conversionResult.set(undefined)">
+    </app-conversion-form>
+    <app-conversion-table [conversionResult]="conversionResult()"></app-conversion-table>
+</div>

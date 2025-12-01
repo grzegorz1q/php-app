@@ -1,0 +1,23 @@
+@if (conversionResult()) {
+    <table>
+        <thead>
+            <tr>
+                <th>Waluta</th>
+                <th>Kurs</th>
+                <th>Kwota</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (cr of conversionResult()?.rates; track $index) {
+                <tr>
+                    <td>{{ cr.currency }}</td>
+                    <td>{{ cr.rate }}</td>
+                    <td>{{ cr.value}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p class="date">
+        Data kursów: {{ conversionResult()?.date }}
+    </p>
+}
