@@ -12,6 +12,10 @@ class CurrencyRatesController{
 
             echo json_encode($result);
         }
+        catch (\InvalidArgumentException $ex){
+            http_response_code(400);
+            echo json_encode(['error' => $ex->getMessage()]);
+        }
         catch (\Exception $ex){
             http_response_code(500);
             echo json_encode(['error' => $ex->getMessage()]);

@@ -1,0 +1,74 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.hidden{
+    display: none;
+}
+#error-message {
+    color: red;
+    font-weight: bold;
+}
+#date {
+    font-style: italic;
+    text-align: right;
+}
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: rgb(240, 241, 241);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+form label{
+    font-weight: bold;
+}
+form input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+form input:focus{
+    border-color: #4CAF50;
+    outline: none;
+}
+form button{
+    padding: 8px;
+    font-size: 16px;
+    background-color: #66db6a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+form button:hover{
+    background-color: #4CAF50;
+}
+
+table{
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+}
+thead{
+    background-color: #66db6a;
+    color: white;
+}
+thead th {
+    padding: 10px;
+    text-align: center;
+}
+tbody tr:hover{
+    background-color: #d6f5d6;
+}
+td {
+    padding: 10px;
+    text-align: center;
+}
