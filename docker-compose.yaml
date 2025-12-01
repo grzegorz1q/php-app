@@ -4,9 +4,15 @@ services:
   php-apache:
     image: php:8.5-apache
     ports:
-    - "8080:80"
+    - "80:80"
     volumes:
-    - ./:/var/www/html
+    - ./Server:/var/www/html/app/Server
     environment:
       - OPCACHE_ENABLE=0
+    restart: always
+  angular-client:
+    build:
+      context: ./Client
+    ports:
+      - "4200:80"
     restart: always
